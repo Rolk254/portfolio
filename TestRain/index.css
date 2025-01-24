@@ -1259,7 +1259,33 @@
   
   .tech-stack-box img {
     width: 80%;
+    transition: all 1s ease-in-out; /* Transición para todas las propiedades */
+    border-radius: 20px; /* Bordes suavizados */
+    position: relative;
   }
+  
+  .tech-stack-box:hover img {
+    transform: scale(1.05) rotate(4deg); /* Aumenta el tamaño y añade una rotación ligera */
+    filter: hue-rotate(180deg) saturate(1.8) brightness(1.4) contrast(1.3); /* Efecto de cambio de colores fluido */
+  }
+  
+  /* Para darle un toque más de brillo cuando se hace hover */
+  .tech-stack-box img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease;
+    opacity: 0;
+    border-radius: 20px; /* Mantén los bordes redondeados */
+  }
+  
+  .tech-stack-box:hover img::before {
+    opacity: 1; /* Agrega un resplandor cuando se hace hover */
+  }
+  
   
   .tech-stack-box:hover .tooltip {
     opacity: 1;
